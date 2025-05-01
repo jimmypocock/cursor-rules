@@ -1,0 +1,144 @@
+---
+description: Expo Development Standards
+globs: 
+alwaysApply: false
+---
+---
+Description: Expo Development Standards
+Globs: **/*.tsx, **/*.jsx, **/*.ts, **/*.js, **/expo.config.js, **/app.json
+---
+
+# Expo Development Standards
+@base.mdc
+@typescript.mdc
+@react-native.mdc
+
+## Project Configuration
+- Use app.json/app.config.js for configuration
+- Implement proper versioning strategy
+- Configure proper app identifiers
+- Set up splash screen and app icon properly
+- Configure proper orientation settings
+- Implement proper permissions handling
+- Set up proper navigation structure
+- Configure build settings appropriately
+
+## Expo Workflow
+- Use Expo CLI for development
+- Implement proper environment variables
+- Configure development build correctly
+- Use Expo Go for rapid development
+- Implement proper production builds
+- Create custom development clients when needed
+- Use proper publishing workflows
+- Implement proper version control with Expo
+
+## EAS (Expo Application Services)
+- Use EAS Build for production builds
+- Implement EAS Update for over-the-air updates
+- Configure proper EAS profiles
+- Set up appropriate build triggers
+- Use EAS Submit for store submissions
+- Implement proper environment secrets
+- Configure proper build cache settings
+- Use EAS Metadata for store listings
+
+## Expo Libraries
+- Use Expo SDK modules appropriately
+- Implement proper module version compatibility
+- Use Expo Router for navigation when appropriate
+- Implement proper media handling with Expo
+- Use Expo's notification system properly
+- Implement proper authentication with Expo Auth
+- Configure Expo FileSystem for storage
+- Use Expo's asset system for resources
+
+## Authentication
+- Implement secure authentication flows
+- Use Expo Auth Session appropriately
+- Configure proper auth providers
+- Implement secure token storage
+- Create proper authentication state management
+- Implement proper session management
+- Configure proper authentication error handling
+- Create proper authentication UI flows
+
+## Navigation
+- Use Expo Router or React Navigation
+- Implement proper deep linking
+- Configure proper navigation state persistence
+- Create type-safe navigation
+- Implement proper navigation guards
+- Use proper stack management
+- Create appropriate transition animations
+- Implement proper navigation context
+
+## Asset Management
+- Use Expo's asset system for images and fonts
+- Implement proper asset caching
+- Configure appropriate asset loading strategies
+- Create proper asset preloading
+- Use Expo Image for optimized images
+- Implement proper image resizing
+- Configure proper font loading
+- Use asset bundling appropriately
+
+## Performance
+- Optimize JavaScript bundle size
+- Use Hermes engine for improved performance
+- Implement proper memory management
+- Create optimized list rendering
+- Use proper image optimization
+- Implement appropriate caching strategies
+- Configure proper native module optimization
+- Use performance monitoring tools
+
+## Over-the-Air Updates
+- Implement proper OTA update strategies
+- Configure update channels appropriately
+- Create proper version management
+- Use proper update rollout strategies
+- Implement proper update testing
+- Configure proper rollback mechanisms
+- Create appropriate user communication for updates
+- Use proper update event handling
+
+## Offline Support
+- Implement proper offline data storage
+- Create appropriate sync mechanisms
+- Use proper conflict resolution strategies
+- Implement proper offline UI states
+- Configure appropriate retry mechanisms
+- Use proper network state detection
+- Create resilient API interactions
+- Implement proper error handling for offline scenarios
+
+## Testing
+- Use Expo's testing tools
+- Implement unit tests for business logic
+- Create component tests with Testing Library
+- Use Jest for test running
+- Implement end-to-end tests
+- Create proper test fixtures
+- Use proper mocking strategies
+- Implement proper CI/CD for testing
+
+## Publishing
+- Use proper versioning for releases
+- Implement appropriate release channels
+- Configure proper production builds
+- Use EAS Submit for store submissions
+- Create proper release notes
+- Implement appropriate store listing assets
+- Configure proper beta testing
+- Use proper release management workflows
+
+## Security
+- Implement proper environment variable handling
+- Use secure storage for sensitive data
+- Configure proper API security
+- Implement proper authentication
+- Create appropriate permission handling
+- Use proper certificate pinning
+- Implement security monitoring
+- Configure proper data encryption

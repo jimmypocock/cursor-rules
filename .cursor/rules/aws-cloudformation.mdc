@@ -1,0 +1,122 @@
+---
+description: AWS CloudFormation Development Standards
+globs: 
+alwaysApply: false
+---
+---
+Description: AWS CloudFormation Development Standards
+Globs: **/*.yaml, **/*.yml, **/*.json, **/*.template
+---
+
+# AWS CloudFormation Development Standards
+@base.mdc
+
+## Template Structure
+- Organize templates with clear sections (Parameters, Mappings, Resources, Outputs)
+- Use a consistent logical resource naming convention
+- Add metadata for improved template documentation
+- Implement description fields for templates and resources
+- Group related resources together in the template
+- Keep templates modular and focused on specific components
+- Use nested stacks for complex architectures
+- Implement stack sets for multi-account/region deployments
+
+## Resource Definitions
+- Define resources with appropriate properties
+- Use intrinsic functions (Ref, GetAtt, etc.) appropriately
+- Implement resource dependencies correctly
+- Use DependsOn only when explicit dependencies are required
+- Configure deletion policies for stateful resources
+- Set up update policies for controlled updates
+- Implement creation policies for resource initialization
+- Use UpdateReplacePolicy to protect data during updates
+
+## Parameters
+- Define parameters for configurable values
+- Specify appropriate parameter types
+- Set default values when applicable
+- Add parameter descriptions for clarity
+- Implement parameter constraints (AllowedValues, Min/Max)
+- Group similar parameters using parameter groups
+- Organize parameters in a logical order
+- Use SSM Parameter Store references for sensitive values
+
+## Mappings
+- Create mappings for environment-specific configurations
+- Structure mappings with logical hierarchies
+- Implement region-specific configurations via mappings
+- Use mappings for instance types, AMIs, and similar variations
+- Document mapping structure and usage
+- Keep mappings updated with latest values
+- Use FindInMap function correctly
+- Implement proper fallbacks for mapping lookups
+
+## Conditions
+- Create conditions for resource inclusion/exclusion
+- Implement environment-specific conditions
+- Use conditions for feature toggles
+- Combine conditions logically when necessary
+- Document condition purpose and logic
+- Keep condition expressions readable
+- Test condition outcomes in different scenarios
+- Implement default behaviors for condition failure
+
+## Outputs
+- Export important resource information
+- Use descriptive output names
+- Add descriptions to outputs
+- Export values needed by other stacks
+- Implement proper cross-stack references
+- Output URLs, ARNs, and other useful identifiers
+- Organize outputs by logical groups
+- Document output usage and purpose
+
+## Security Best Practices
+- Implement least privilege IAM policies
+- Use dynamic references for sensitive information
+- Avoid hardcoding credentials or sensitive data
+- Implement proper resource-level permissions
+- Configure encryption for sensitive resources
+- Set up proper VPC configurations
+- Implement security groups with minimum required access
+- Use secure default values for parameters
+
+## Template Validation
+- Validate templates with CloudFormation linting tools
+- Use cfn-lint for syntax and best practice checking
+- Implement cfn-nag for security validation
+- Run static analysis on templates
+- Test templates in development environments
+- Validate parameter constraints
+- Check for circular dependencies
+- Ensure resource limits are respected
+
+## Template Management
+- Use version control for template management
+- Implement a change management process
+- Document template changes in commit messages
+- Use branches for template development
+- Implement peer reviews for template changes
+- Test templates in isolated environments
+- Use drift detection for deployed stacks
+- Implement proper backup and recovery procedures
+
+## Deployment Strategies
+- Implement staged deployments across environments
+- Use change sets for controlled updates
+- Configure appropriate stack update behaviors
+- Implement rollback triggers for failed deployments
+- Set up proper monitoring during deployments
+- Use stack policies to protect critical resources
+- Implement blue/green deployments for zero-downtime updates
+- Configure proper timeout values for resource creation/updates
+
+## Optimization
+- Use Custom Resources for special use cases
+- Implement proper error handling in custom resources
+- Use Macros for template transformations
+- Leverage StackSets for multi-account deployments
+- Implement resource import for existing resources
+- Use dynamic references to external configuration
+- Optimize template size for large deployments
+- Implement proper resource cleanup for cost efficiency

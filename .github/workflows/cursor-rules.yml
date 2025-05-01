@@ -1,0 +1,135 @@
+name: Cursor Rules Maintenance
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.cursor/rules/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - '.cursor/rules/**'
+  schedule:
+    # Run weekly on Monday at 9:00 AM
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+    # Allow manual triggering
+
+jobs:
+  validate:
+    name: Validate Rules
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: .github/scripts
+
+      - name: Validate rule files
+        run: node validate-rules.js
+        working-directory: .github/scripts
+
+  sync-to-projects:
+    name: Sync Rules to Projects
+    needs: validate
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+
+    strategy:
+      matrix:
+        project:
+          - repo: your-org/project-1
+            branch: main
+          - repo: your-org/project-2
+            branch: main
+          # Add more projects as needed
+
+    steps:
+      - name: Checkout cursor rules
+        uses: actions/checkout@v4
+        with:
+          path: cursor-rules
+
+      - name: Checkout target project
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ matrix.project.repo }}
+          token: ${{ secrets.GH_PAT }}
+          path: target-project
+          ref: ${{ matrix.project.branch }}
+
+      - name: Set up Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+      - name: Sync rules to project
+        run: |
+          # Create directories if they don't exist
+          mkdir -p target-project/.cursor/rules
+
+          # Copy rules
+          cp -r cursor-rules/.cursor/rules/* target-project/.cursor/rules/
+
+          # Check if there are changes
+          cd target-project
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git add .cursor/rules
+            git commit -m "Update cursor rules from central repository"
+            git push
+            echo "Rules updated successfully"
+          else
+            echo "No changes to commit"
+          fi
+
+  check-for-updates:
+    name: Check for best practice updates
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: .github/scripts
+
+      - name: Check for AWS best practice updates
+        run: node check-aws-best-practices.js
+        working-directory: .github/scripts
+
+      - name: Check for React/Next.js updates
+        run: node check-frontend-best-practices.js
+        working-directory: .github/scripts
+
+      - name: Check for React Native updates
+        run: node check-mobile-best-practices.js
+        working-directory: .github/scripts
+
+      - name: Create issue if updates found
+        if: ${{ env.UPDATES_FOUND == 'true' }}
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: 'Best practice updates available',
+              body: 'New best practices detected. Please review the workflow run log and update rules as needed.\n\nRun URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}'
+            })

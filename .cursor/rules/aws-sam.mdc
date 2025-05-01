@@ -1,0 +1,112 @@
+---
+description: AWS Serverless Application Model (SAM) Development Standards
+globs: 
+alwaysApply: false
+---
+---
+Description: AWS Serverless Application Model (SAM) Development Standards
+Globs: **/*.yaml, **/*.yml, **/template.yaml, **/sam.yaml
+---
+
+# AWS SAM Development Standards
+@base.mdc
+
+## SAM Template Structure
+- Organize templates with logical resource groupings
+- Use clear, descriptive resource names
+- Add comments for complex resource configurations
+- Structure templates consistently across projects
+- Implement parameters for configurable values
+- Use outputs for important resource information
+- Create mappings for environment-specific variables
+- Split complex applications into nested stacks
+
+## SAM Resource Definitions
+- Define Lambda functions with appropriate properties
+- Configure API Gateway resources properly
+- Set up DynamoDB tables with correct key structures
+- Implement proper S3 bucket configurations
+- Create appropriate event source mappings
+- Configure Step Functions state machines properly
+- Set up SNS topics and SQS queues with correct attributes
+- Define appropriate CloudWatch alarm resources
+
+## Function Configuration
+- Set appropriate memory and timeout values
+- Configure environment variables properly
+- Implement function layers for shared code
+- Set up appropriate IAM roles with least privilege
+- Configure function URL settings when applicable
+- Implement proper VPC configurations when needed
+- Set up provisioned concurrency for critical functions
+- Configure proper retry behavior for event sources
+
+## API Gateway Configuration
+- Implement proper API Gateway endpoint types
+- Configure appropriate authorization methods
+- Set up request/response mappings properly
+- Implement proper CORS settings
+- Configure throttling and quota limits
+- Set up appropriate caching strategies
+- Implement proper stage variables
+- Configure request validation when applicable
+
+## Event Configuration
+- Define appropriate event sources for Lambda functions
+- Configure event filters to reduce unnecessary invocations
+- Set proper batch sizes for stream-based event sources
+- Implement proper failure handling for event processing
+- Configure event retention and replay strategies
+- Set up dead-letter queues for failed events
+- Configure event source mappings with proper concurrency settings
+- Implement event bridging patterns when appropriate
+
+## Security Best Practices
+- Implement proper IAM roles with least privilege
+- Configure appropriate resource policies
+- Set up proper encryption for all resource types
+- Implement secure API authorization
+- Configure VPC endpoints for private resources
+- Set up WAF for public APIs
+- Implement proper secret management
+- Configure security groups and network ACLs properly
+
+## Deployment Configuration
+- Configure appropriate deployment preferences
+- Set up canary deployments for critical resources
+- Implement proper rollback triggers
+- Configure CodeDeploy hooks appropriately
+- Set up deployment alarms
+- Implement blue/green deployment strategies
+- Configure proper deployment monitoring
+- Implement deployment validation tests
+
+## Local Development
+- Use SAM CLI for local testing
+- Configure proper local environment variables
+- Set up mock event JSON files for testing
+- Implement proper debugging configurations
+- Use SAM accelerate for faster development
+- Configure proper local API testing
+- Set up Docker for local Lambda execution
+- Implement proper unit and integration testing
+
+## CI/CD Integration
+- Set up proper SAM build pipelines
+- Configure deployment artifacts correctly
+- Implement environment-specific configurations
+- Set up proper testing stages in pipelines
+- Configure appropriate approval workflows
+- Implement proper artifact storage
+- Set up deployment validation
+- Configure proper rollback strategies
+
+## Monitoring and Observability
+- Implement proper CloudWatch logging
+- Set up appropriate CloudWatch metrics
+- Configure custom metrics for business KPIs
+- Implement proper alarm configurations
+- Set up X-Ray tracing for distributed systems
+- Configure proper log groups and retention policies
+- Implement centralized logging strategies
+- Set up appropriate dashboards for monitoring

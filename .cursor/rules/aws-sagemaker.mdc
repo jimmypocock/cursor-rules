@@ -1,0 +1,163 @@
+---
+description: AWS SageMaker Development Standards
+globs: 
+alwaysApply: false
+---
+---
+Description: AWS SageMaker Development Standards
+Globs: **/sagemaker/**/*, **/ml/**/*, **/models/**/*, **/notebooks/**/*
+---
+
+# AWS SageMaker Development Standards
+@base.mdc
+@typescript.mdc
+
+## SageMaker Project Structure
+- Organize projects with clear separation of concerns
+- Implement proper model training/inference code separation
+- Create reproducible experiment environments
+- Design modular processing pipelines
+- Implement proper data preprocessing components
+- Create appropriate model evaluation modules
+- Design proper feature engineering pipelines
+- Implement proper deployment configurations
+
+## Model Development
+- Implement standardized model interfaces
+- Create proper model parameter configurations
+- Design appropriate hyperparameter optimization
+- Implement proper validation strategies
+- Create appropriate model evaluation metrics
+- Design proper model versioning
+- Implement appropriate model documentation
+- Create proper reproducibility controls
+
+## Data Management
+- Implement proper data versioning
+- Create appropriate data preprocessing pipelines
+- Design efficient data loading mechanisms
+- Implement proper feature extraction
+- Create appropriate data validation checks
+- Design proper data labeling processes
+- Implement efficient data augmentation
+- Create appropriate data splitting strategies
+
+## Training Jobs
+- Configure appropriate training job parameters
+- Implement proper distributed training
+- Create appropriate checkpoint strategies
+- Design efficient hyperparameter tuning jobs
+- Implement proper early stopping
+- Create appropriate resource configurations
+- Design proper training metrics collection
+- Implement appropriate experiment tracking
+
+## Model Deployment
+- Implement proper model serving configurations
+- Create appropriate endpoint configurations
+- Design efficient auto-scaling policies
+- Implement proper model monitoring
+- Create appropriate deployment strategies
+- Design proper A/B testing mechanisms
+- Implement efficient batch transform jobs
+- Create appropriate multi-model endpoints when applicable
+
+## SageMaker Pipelines
+- Design proper ML workflow pipelines
+- Implement appropriate pipeline components
+- Create modular pipeline steps
+- Design proper pipeline parameters
+- Implement appropriate condition steps
+- Create proper pipeline versioning
+- Design effective data processing steps
+- Implement proper model evaluation steps
+
+## MLOps Practices
+- Implement proper CI/CD for ML models
+- Create appropriate model registries
+- Design effective model approval workflows
+- Implement proper model lineage tracking
+- Create appropriate model artifact management
+- Design proper model rollback strategies
+- Implement efficient model monitoring
+- Create proper automated retraining workflows
+
+## Model Monitoring
+- Configure appropriate model monitors
+- Implement proper data quality monitoring
+- Create appropriate model quality monitoring
+- Design effective model bias monitoring
+- Implement proper model explainability metrics
+- Create appropriate alerting thresholds
+- Design proper baseline constraints
+- Implement efficient monitoring schedules
+
+## Notebooks and Experimentation
+- Implement structured notebook templates
+- Create reproducible notebook environments
+- Design proper experiment tracking
+- Implement efficient notebook parameterization
+- Create appropriate visualization standards
+- Design modular notebook components
+- Implement proper notebook version control
+- Create appropriate notebook documentation
+
+## Cost Optimization
+- Implement right-sized instance selection
+- Create appropriate spot instance usage
+- Design efficient resource cleanup
+- Implement proper auto-scaling configurations
+- Create appropriate storage lifecycle policies
+- Design cost-efficient training strategies
+- Implement proper resource tagging
+- Create appropriate cost allocation tracking
+
+## Security Best Practices
+- Implement proper IAM roles with least privilege
+- Create appropriate VPC configurations
+- Design proper encryption at rest and in transit
+- Implement secure network configurations
+- Create appropriate model artifact encryption
+- Design proper data access controls
+- Implement proper logging and monitoring
+- Create appropriate security group configurations
+
+## SageMaker Studio
+- Implement proper user management
+- Create appropriate domain configurations
+- Design proper app lifecycle management
+- Implement efficient notebook sharing
+- Create appropriate resource isolation
+- Design proper environment configurations
+- Implement appropriate custom image management
+- Create proper collaboration workflows
+
+## SageMaker Feature Store
+- Design proper feature group definitions
+- Implement appropriate feature engineering pipelines
+- Create efficient feature retrieval patterns
+- Design proper online/offline store usage
+- Implement appropriate feature versioning
+- Create proper feature lineage tracking
+- Design efficient feature transformation
+- Implement appropriate feature validation
+
+## Model Inference
+- Implement efficient serialization/deserialization
+- Create appropriate preprocessing/postprocessing
+- Design proper batch vs. real-time inference patterns
+- Implement efficient model loading
+- Create appropriate inference pipeline components
+- Design proper multi-model serving strategies
+- Implement appropriate model performance profiling
+- Create proper model optimization (ONNX, etc.)
+
+## Integration with Other AWS Services
+- Implement proper S3 integration for data storage
+- Create appropriate CloudWatch metrics and alarms
+- Design effective Step Functions for orchestration
+- Implement proper Lambda integration
+- Create appropriate EventBridge integration
+- Design effective integration with data lakes
+- Implement proper integration with Glue for ETL
+- Create appropriate API Gateway integration for model serving

@@ -1,0 +1,127 @@
+---
+description: AWS DynamoDB Best Practices
+globs: 
+alwaysApply: false
+---
+---
+Description: AWS DynamoDB Best Practices
+Globs: **/dynamodb/**/*.ts, **/models/**/*.ts, **/database/**/*.ts, **/repositories/**/*.ts
+---
+
+# AWS DynamoDB Development Standards
+@base.mdc
+@typescript.mdc
+
+## Data Modeling Principles
+- Design for query patterns, not data relationships
+- Start with access patterns before determining table structure
+- Use single-table design for related entities when appropriate
+- Keep item sizes small (preferably under 4KB)
+- Avoid overly normalized data structures
+- Balance between read and write efficiency based on workload
+- Design with future growth and changing access patterns in mind
+
+## Key Design
+- Choose partition keys with high cardinality to distribute data evenly
+- Avoid partition keys that could create hot spots
+- Use composite sort keys for hierarchical relationships
+- Design sort keys to support range queries efficiently
+- Use meaningful prefixes in sort keys for item collection filtering
+- Implement composite keys with delimiters (e.g., `USER#123#PROFILE`)
+- Consider using GSIs for alternative access patterns
+
+## Item Structure
+- Use consistent attribute naming conventions
+- Include entity type discriminator attributes
+- Denormalize data when it supports common access patterns
+- Use short attribute names for frequently accessed items
+- Store date/time values in ISO format
+- Use consistent JSON serialization for complex nested objects
+- Consider compression for large attribute values
+
+## Secondary Indexes
+- Use sparse indexes where appropriate
+- Create GSIs only for required access patterns
+- Keep index projections minimal (KEYS_ONLY or INCLUDE specific attributes)
+- Use LSIs sparingly due to partition size limits
+- Design indexes to support efficient query patterns
+- Consider overloading indexes for multiple access patterns
+- Use index sort keys to enable range filtering
+
+## Query Optimization
+- Use query operations instead of scans whenever possible
+- Implement pagination for large result sets
+- Use consistent reads for time-sensitive operations
+- Use eventually consistent reads for non-critical operations
+- Batch operations for multiple items when possible
+- Leverage query filtering only for post-filtering, not as a primary filter
+- Implement cursor-based pagination over offset-based
+
+## Write Operations
+- Use BatchWriteItem for bulk operations (max 25 items)
+- Use conditional writes to prevent race conditions
+- Implement optimistic locking with version attributes
+- Use atomic counters for high-contention updates
+- Leverage transactions for multi-item consistency
+- Implement idempotent write operations
+
+## DynamoDB Streams
+- Use streams for event-driven architectures
+- Process stream events asynchronously
+- Implement idempotent Lambda consumers
+- Set appropriate batch size and window for stream processors
+- Handle partial failures in stream consumers
+- Track stream processing position for recovery
+- Leverage Kinesis for complex stream processing
+
+## Performance & Scaling
+- Use on-demand capacity for unpredictable workloads
+- Use provisioned capacity with auto-scaling for predictable workloads
+- Implement adaptive capacity planning
+- Monitor and adjust capacity based on usage patterns
+- Use DAX for read-heavy workloads that can leverage caching
+- Implement client-side request batching and caching
+- Use appropriate retry policies with exponential backoff
+
+## Cost Optimization
+- Choose the right capacity mode for your workload
+- Minimize index count and attribute projections
+- Use TTL for automatic data expiration
+- Implement data archiving strategies for historical data
+- Monitor and optimize read/write capacity usage
+- Use DAX for read-heavy workloads to reduce read capacity needs
+- Consider using Reserved Capacity for stable workloads
+
+## Security Best Practices
+- Implement fine-grained IAM policies with least privilege
+- Use VPC endpoints for private access
+- Enable server-side encryption
+- Implement attribute-level encryption for sensitive data
+- Use IAM condition keys to restrict access to specific items
+- Audit DynamoDB access with CloudTrail
+- Implement data classification and handling procedures
+
+## Data Migration & Evolution
+- Plan for schema evolution in single-table designs
+- Implement versioning for item structures
+- Create migration strategies for changing access patterns
+- Use DynamoDB Streams for online migrations
+- Test migrations in non-production environments
+- Implement rollback procedures for failed migrations
+- Document data structures and access patterns
+
+## Repository Pattern Implementation
+- Use a repository pattern to abstract database operations
+- Create strongly typed data models
+- Implement data validation before persistence
+- Create entity-specific repositories
+- Share common query building utilities
+- Handle errors and retries consistently
+- Add tracing and logging for database operations
+
+## Data Consistency
+- Understand and leverage DynamoDB's consistency model
+- Use transactions for multi-item operations requiring consistency
+- Implement optimistic concurrency control
+- Document consistency requirements for each operation
+- Consider event sourcing for complex state tracking

@@ -1,0 +1,96 @@
+---
+description: TypeScript Development Standards
+globs: 
+alwaysApply: false
+---
+---
+Description: TypeScript Development Standards
+Globs: **/*.ts, **/*.tsx, **/*.mts, **/*.cts
+---
+
+# TypeScript Development Standards
+@base.mdc
+
+## Core TypeScript Principles
+- Leverage TypeScript's static typing to catch errors at compile time
+- Avoid using `any` type unless absolutely necessary
+- Use type inference where it improves readability
+- Define explicit return types for functions
+- Create reusable type definitions for common patterns
+- Take advantage of TypeScript's advanced type features when appropriate
+
+## Type Definitions
+
+### Naming
+- Use PascalCase for interface and type names (e.g., `UserProfile`)
+- Prefix interfaces for React component props with component name (e.g., `ButtonProps`)
+- Use descriptive names that convey purpose (e.g., `ApiResponse` rather than just `Response`)
+- Avoid prefixing interfaces with 'I' (prefer `User` over `IUser`)
+
+### Structure
+- Use interfaces for object shapes primarily
+- Use type aliases for unions, intersections, or complex types
+- Prefer interfaces for public APIs to support declaration merging
+- Keep type definitions close to where they are used
+- Export types that are used across multiple files
+
+### Type Safety
+- Enable strict type checking in `tsconfig.json`
+- Use `unknown` instead of `any` when type is unclear
+- Use union types to represent values that could be of different types
+- Utilize generics for flexible, reusable code
+- Add appropriate type guards when narrowing types
+- Use `readonly` modifiers for immutable properties
+- Use `as const` for literal values when appropriate
+
+## Best Practices
+
+### Modern TypeScript Features
+- Use optional chaining (`?.`) to safely access nested properties
+- Use nullish coalescing (`??`) to provide default values
+- Use template literal types for string manipulations
+- Apply mapped types to transform existing types
+- Use conditional types for type-level programming
+- Leverage utility types (e.g., `Partial<T>`, `Required<T>`, `Pick<T>`, `Omit<T>`)
+- Use const assertions for readonly arrays and tuples
+
+### Error Handling
+- Create and use custom error types 
+- Use discriminated unions for type-safe error handling
+- Implement Result types for functions that can fail
+
+### Functions
+- Prefer arrow functions for consistent `this` binding
+- Use function overloads for functions with complex type relationships
+- Use rest parameters instead of arguments object
+- Destructure objects in function parameters for clarity
+- Provide explicit return types for non-trivial functions
+
+### Async Code
+- Use async/await over Promise chains
+- Properly type Promise results
+- Handle errors in async functions with try/catch
+- Use Promise.all/allSettled for parallel operations
+
+## Environment Configuration
+- Set appropriate target and lib settings in tsconfig.json
+- Use path aliases to simplify imports
+- Enable incremental compilation for larger projects
+- Configure appropriate module resolution
+
+## Organizing Code
+- Use ES modules with named exports
+- Group related types in namespaces or dedicated type files
+- Organize code with barrel files (index.ts) for cleaner imports
+- Split complex types into smaller, composed types
+
+## Documentation
+- Document complex types with JSDoc/TSDoc comments
+- Include examples for non-obvious type usage
+- Document constraints and invariants that types enforce
+- Use `@deprecated` tags when phasing out types
+
+## Testing
+- Use type-aware testing frameworks
+- Test type constraints with compile-time tests
+- Ensure tests cover edge cases in type handling

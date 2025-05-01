@@ -1,0 +1,143 @@
+---
+description: AWS EventBridge Development Standards
+globs: 
+alwaysApply: false
+---
+---
+Description: AWS EventBridge Development Standards
+Globs: **/events/**/*, **/eventbridge/**/*, **/event-driven/**/*, **/serverless/**/*
+---
+
+# AWS EventBridge Development Standards
+@base.mdc
+@typescript.mdc
+
+## Event Design
+- Design standardized event schemas
+- Implement proper event versioning
+- Create appropriate detail field structures
+- Design consistent event source naming
+- Implement proper event metadata
+- Create appropriate correlation IDs for tracing
+- Design effective event filtering patterns
+- Implement proper event documentation
+
+## Event Bus Architecture
+- Design appropriate event bus organization
+- Implement proper default vs. custom event buses
+- Create appropriate cross-account event routing
+- Design effective event archiving strategies
+- Implement proper event replay capabilities
+- Create appropriate event pattern matching
+- Design efficient event routing patterns
+- Implement proper event bus security
+
+## Rule Configuration
+- Design effective event pattern rules
+- Implement proper rule targets
+- Create appropriate rule prioritization
+- Design consistent rule naming conventions
+- Implement proper rule documentation
+- Create appropriate rule tagging
+- Design efficient rule evaluation
+- Implement proper rule testing
+
+## Event Processing
+- Implement idempotent event processors
+- Create appropriate event validation
+- Design effective event transformation
+- Implement proper error handling
+- Create appropriate dead-letter queues
+- Design efficient batching strategies
+- Implement proper event logging
+- Create appropriate processing metrics
+
+## Integration Patterns
+- Design effective Lambda integration
+- Implement proper SQS queue integration
+- Create appropriate SNS topic targets
+- Design effective Step Functions integration
+- Implement proper Kinesis stream targets
+- Create appropriate API destination integration
+- Design effective cross-service event patterns
+- Implement proper third-party integrations
+
+## Schema Registry
+- Implement proper schema definitions
+- Create appropriate schema versions
+- Design effective schema discovery
+- Implement proper code binding generation
+- Create appropriate schema validation
+- Design proper schema evolution
+- Implement schema documentation
+- Create appropriate schema sharing
+
+## Event Sourcing
+- Design effective event-driven architectures
+- Implement proper event source mapping
+- Create appropriate event stores
+- Design effective event replay mechanisms
+- Implement proper event versioning
+- Create appropriate aggregate reconstruction
+- Design proper event projection
+- Implement effective CQRS patterns
+
+## Scheduling
+- Implement proper scheduled event rules
+- Create appropriate cron expressions
+- Design effective time window scheduling
+- Implement proper timezone handling
+- Create appropriate schedule documentation
+- Design efficient batch scheduling
+- Implement proper schedule monitoring
+- Create appropriate retry strategies
+
+## Cross-Account/Cross-Region
+- Design proper resource policies
+- Implement appropriate cross-account event buses
+- Create effective global event routing
+- Design proper account strategy for event distribution
+- Implement appropriate event filtering for cross-account events
+- Create proper documentation for cross-account patterns
+- Design effective multi-region event strategies
+- Implement proper security for cross-account events
+
+## Monitoring and Observability
+- Implement proper CloudWatch metrics
+- Create appropriate custom metrics
+- Design effective operational dashboards
+- Implement proper event logging
+- Create appropriate alerting
+- Design effective event tracing
+- Implement proper event archiving for auditing
+- Create appropriate monitoring for event delivery failures
+
+## Security
+- Implement proper IAM policies
+- Create appropriate resource-based policies
+- Design effective security for event patterns
+- Implement proper encryption for sensitive data
+- Create appropriate PII handling
+- Design proper authentication for API destinations
+- Implement security monitoring
+- Create appropriate audit trails
+
+## Performance Optimization
+- Design efficient event patterns
+- Implement proper target concurrency
+- Create appropriate batching strategies
+- Design effective event filtering
+- Implement proper event compression
+- Create appropriate retry policies
+- Design efficient event routing
+- Implement proper performance monitoring
+
+## Cost Optimization
+- Implement cost-effective event publishing
+- Create appropriate archiving strategies
+- Design efficient event routing
+- Implement proper event filtering
+- Create appropriate API destination usage
+- Design efficient schema usage
+- Implement proper resource tagging
+- Create appropriate cost allocation tracking

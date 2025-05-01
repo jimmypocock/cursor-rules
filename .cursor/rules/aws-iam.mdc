@@ -1,0 +1,113 @@
+---
+description: AWS IAM Security Best Practices
+globs: 
+alwaysApply: false
+---
+---
+Description: AWS IAM Security Best Practices
+Globs: **/iam/**/*.ts, **/iam/**/*.json, **/cdk/**/*.ts, **/sam/**/*.yaml, **/cloudformation/**/*.yaml
+---
+
+# AWS IAM Development Standards
+@base.mdc
+@typescript.mdc
+
+## IAM Policy Design
+- Apply the principle of least privilege for all IAM roles and policies
+- Grant only the minimum permissions necessary for the required task
+- Use specific ARNs instead of wildcards when possible
+- Add conditions to further restrict access when appropriate
+- Separate permissions by function or service
+- Review and audit IAM policies regularly
+- Use policy variables to make policies more precise
+- Implement resource-based policies where applicable
+
+## IAM Role Structure
+- Create purpose-specific roles for different functions
+- Assign appropriate trust relationships to roles
+- Set appropriate session durations for assumed roles
+- Use role paths to organize roles by application or service
+- Implement proper cross-account role access patterns
+- Document purpose and usage of each role
+- Organize roles using proper naming conventions
+- Apply strict permission boundaries for delegated permissions
+
+## Lambda Function IAM Roles
+- Create function-specific IAM roles
+- Grant only permissions needed by the specific Lambda function
+- Use resource-based conditions for additional security
+- Include CloudWatch Logs permissions for proper logging
+- Add X-Ray permissions if tracing is enabled
+- Implement resource-level permissions when possible
+- Document all permissions in comments or metadata
+- Follow the same-account principle for resource access
+
+## API Gateway IAM Integration
+- Use resource policies to control API access
+- Implement proper IAM authentication for private APIs
+- Create API-specific roles for Lambda integrations
+- Separate roles for different API stages
+- Include proper CloudWatch Logs permissions
+- Implement custom authorizers with appropriate permissions
+- Use IAM tags for access control when appropriate
+- Apply API key restrictions correctly
+
+## DynamoDB Access Control
+- Grant specific table-level permissions for operations
+- Implement fine-grained access control using IAM conditions
+- Use IAM policy conditions for attribute-level security
+- Create separate roles for read and write operations
+- Implement proper access controls for DynamoDB streams
+- Apply IAM conditions for specific key-based access
+- Restrict access to specific indexes when applicable
+- Document access patterns in IAM policy comments
+
+## S3 Bucket Policies
+- Implement least privilege for bucket access
+- Use specific resource ARNs for object access
+- Apply proper conditions for public content when needed
+- Leverage VPC endpoint policies for private access
+- Implement IAM roles for cross-account access
+- Use bucket policies in conjunction with IAM policies
+- Apply proper encryption requirements in policies
+- Implement S3 Object Ownership correctly
+
+## Security Best Practices
+- Enable and enforce MFA for critical operations
+- Implement proper key rotation for access keys
+- Use AWS managed policies as a starting point
+- Create custom policies for specific requirements
+- Implement proper credential management
+- Use IAM Access Analyzer to identify issues
+- Implement Service Control Policies for organization-wide controls
+- Monitor and alert on policy changes and unusual access patterns
+
+## Infrastructure as Code
+- Define IAM resources using CloudFormation, SAM, or CDK
+- Parameterize environment-specific values
+- Use cross-stack references for shared IAM resources
+- Implement proper resource naming conventions
+- Document policy decisions in code comments
+- Validate IAM policy correctness before deployment
+- Use IAM policy templates for consistent patterns
+- Implement proper drift detection for IAM resources
+
+## Temporary Credentials
+- Use IAM roles instead of long-term access keys
+- Implement proper AssumeRole patterns
+- Set appropriate permission boundaries
+- Create processes for emergency access
+- Implement proper role chaining for multi-account access
+- Use session tags for dynamic permissions
+- Apply proper service-linked role usage
+- Implement role assumption monitoring
+
+## Auditing and Monitoring
+- Enable AWS CloudTrail for API activity monitoring
+- Set up alerts for sensitive IAM changes
+- Implement regular access reviews
+- Use IAM Access Analyzer to identify unintended access
+- Create dashboards for permission usage
+- Monitor unused permissions and access keys
+- Implement proper IAM credential reporting
+- Track and alert on policy version changes

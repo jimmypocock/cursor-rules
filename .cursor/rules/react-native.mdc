@@ -1,0 +1,193 @@
+---
+description: React Native Development Standards
+globs: 
+alwaysApply: false
+---
+---
+Description: React Native Development Standards
+Globs: **/*.tsx, **/*.ts, **/screens/**/*, **/components/**/*, **/App.tsx
+---
+
+# React Native Development Standards
+@base.mdc
+@typescript.mdc
+
+## Project Setup
+- Use TypeScript for type safety
+- Implement ESLint and Prettier for code quality
+- Set up proper directory structure for scalability
+- Use Expo for simpler projects and React Native CLI for complex requirements
+- Configure proper module resolution
+- Implement proper environment configuration
+- Set up proper testing infrastructure
+- Use React Native New Architecture where applicable
+
+## Directory Structure
+- Organize by feature or domain
+- Separate UI components from business logic
+- Create reusable hooks for shared logic
+- Implement services for API interactions
+- Use proper navigation structure
+- Create dedicated styles directory
+- Organize assets efficiently
+- Implement proper type definitions
+
+## Component Architecture
+- Use functional components with hooks
+- Create small, reusable UI components
+- Implement proper component composition
+- Use proper prop validation with TypeScript
+- Create presentational vs container components
+- Implement pure components for performance
+- Use memo for expensive renders
+- Create proper component documentation
+
+## Navigation
+- Use React Navigation as the primary navigation library
+- Implement type-safe navigation
+- Create logical navigation hierarchy
+- Handle deep linking properly
+- Implement proper screen transitions
+- Create reusable navigation patterns
+- Handle authentication flows in navigation
+- Implement proper error boundaries
+
+## Styling
+- Use StyleSheet.create for styles
+- Implement consistent theming
+- Create responsive layouts with flexbox
+- Use dimension-aware styling
+- Implement proper dark mode support
+- Create accessibility-friendly styles
+- Use style composition for complex UIs
+- Implement proper RTL support
+
+## State Management
+- Use React Context for shared state
+- Implement Redux or Zustand for complex state
+- Use local state for component-specific state
+- Leverage React Query for server state
+- Implement proper persistence for offline support
+- Create middleware for side effects
+- Use proper state normalization
+- Implement performance-optimized selectors
+
+## Performance Optimization
+- Use FlatList for long lists
+- Implement proper list item recycling
+- Use memo and useCallback for expensive operations
+- Optimize image loading and caching
+- Implement lazy loading for non-critical components
+- Use Hermes engine for improved performance
+- Optimize JavaScript bundle size
+- Implement proper native module optimization
+
+## Data Fetching
+- Use React Query or SWR for data fetching
+- Implement proper caching strategies
+- Handle offline data synchronization
+- Create retry mechanisms for failed requests
+- Implement proper loading states
+- Handle errors gracefully
+- Use proper authentication in requests
+- Implement pagination for large datasets
+
+## Form Handling
+- Use Formik or React Hook Form for forms
+- Implement proper validation with Yup or Zod
+- Create reusable form components
+- Handle form submission properly
+- Implement proper error handling
+- Create accessible form controls
+- Use proper keyboard handling
+- Implement form persistence when appropriate
+
+## Native Module Integration
+- Create proper TypeScript definitions for native modules
+- Implement cross-platform compatibility
+- Handle permissions properly
+- Create fallbacks for unsupported features
+- Implement proper error handling
+- Document native module usage
+- Create proper testing for native modules
+- Optimize native module performance
+
+## Animation
+- Use Animated API for simple animations
+- Leverage Reanimated for complex animations
+- Create declarative animations
+- Implement performant animations
+- Use proper gesture handling
+- Create reusable animation hooks
+- Optimize animations for performance
+- Test animations across devices
+
+## Testing
+- Write unit tests for business logic
+- Create component tests with React Native Testing Library
+- Implement end-to-end tests with Detox or Maestro
+- Test across multiple device sizes
+- Implement proper mocks for native modules
+- Create test fixtures for common scenarios
+- Test accessibility features
+- Implement visual regression testing
+
+## Accessibility
+- Implement proper accessibility labels
+- Create proper focus order
+- Use proper color contrast
+- Implement screen reader support
+- Test with VoiceOver and TalkBack
+- Create proper touch targets
+- Implement proper keyboard navigation
+- Document accessibility features
+
+## Deep Linking
+- Implement proper deep link handling
+- Create universal links for iOS
+- Implement app links for Android
+- Handle deep link parameters properly
+- Create deep link testing infrastructure
+- Document deep link structure
+- Implement proper deep link analytics
+- Create fallbacks for unsupported deep links
+
+## Offline Support
+- Implement proper data persistence
+- Create offline-first architecture
+- Handle connectivity changes gracefully
+- Implement proper conflict resolution
+- Create offline-aware UI components
+- Implement proper sync mechanisms
+- Test offline scenarios thoroughly
+- Document offline capabilities
+
+## CI/CD
+- Set up proper CI/CD pipelines
+- Implement automated testing
+- Create proper code signing
+- Implement automated deployments
+- Use proper versioning strategies
+- Create proper release notes
+- Implement beta testing distribution
+- Set up proper monitoring
+
+## Security
+- Implement proper authentication flows
+- Create secure storage for sensitive data
+- Use HTTPS for all network requests
+- Implement certificate pinning when needed
+- Create proper obfuscation for sensitive code
+- Implement proper permission handling
+- Create security testing procedures
+- Document security features
+
+## Code Pushing
+- Use Expo Updates or CodePush for OTA updates
+- Implement proper versioning for updates
+- Create staged rollout strategies
+- Implement proper fallback mechanisms
+- Test updates thoroughly
+- Create proper monitoring for updates
+- Document update procedures
+- Implement proper user communication for updates

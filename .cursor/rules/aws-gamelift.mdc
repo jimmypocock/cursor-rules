@@ -1,0 +1,143 @@
+---
+description: AWS GameLift Development Standards
+globs: 
+alwaysApply: false
+---
+---
+Description: AWS GameLift Development Standards
+Globs: **/gamelift/**/*, **/game-server/**/*, **/matchmaking/**/*
+---
+
+# AWS GameLift Development Standards
+@base.mdc
+@typescript.mdc
+
+## GameLift Architecture
+- Design proper separation between game server and client
+- Implement appropriate session management
+- Use proper fleet management strategies
+- Design scalable matchmaking systems
+- Implement proper player session tracking
+- Structure game server code for reliability
+- Create appropriate networking architecture
+- Design for multi-region deployment when needed
+
+## Game Server Integration
+- Implement the GameLift Server SDK correctly
+- Initialize the server process properly
+- Handle onStartGameSession callbacks appropriately
+- Implement proper onProcessTerminate handling
+- Create robust player session validation
+- Implement proper game session logging
+- Use GameLift parameters effectively
+- Configure appropriate server process settings
+
+## Client Integration
+- Use the GameLift Client SDK correctly
+- Implement proper session placement requests
+- Create appropriate matchmaking requests
+- Handle session connection correctly
+- Implement proper error handling for client operations
+- Create resilient connection management
+- Design appropriate retry strategies
+- Implement proper player authentication
+
+## Fleet Management
+- Design appropriate fleet configurations
+- Implement proper auto-scaling policies
+- Create appropriate instance type selection
+- Use spot instances where appropriate
+- Implement proper fleet deployment strategies
+- Configure appropriate runtime configurations
+- Design appropriate multi-location strategy
+- Implement proper fleet monitoring
+
+## Matchmaking
+- Design appropriate matchmaking configurations
+- Implement proper matchmaking rules
+- Create flexible rule sets for different game modes
+- Design appropriate team structures
+- Implement proper matchmaking event handling
+- Create appropriate backfill strategies
+- Design latency-based matching when appropriate
+- Implement timeout handling for matchmaking
+
+## FlexMatch Integration
+- Configure appropriate FlexMatch rule sets
+- Implement proper player attribute collection
+- Design appropriate team formation rules
+- Create proper matchmaking algorithms
+- Implement proper match acceptance process
+- Design appropriate match backfill strategies
+- Create resilient match failure handling
+- Implement proper match event processing
+
+## GameLift Anywhere
+- Configure proper Anywhere fleets
+- Implement proper custom compute registration
+- Create appropriate server group management
+- Design proper hybrid fleet strategies
+- Implement proper authentication token handling
+- Configure appropriate computation placement
+- Design resilient custom compute integration
+- Implement proper logging and monitoring
+
+## Realtime Servers
+- Configure Realtime script properly
+- Implement appropriate message handlers
+- Design proper game state synchronization
+- Create appropriate player group management
+- Implement proper session lifecycle handling
+- Design scalable message patterns
+- Create appropriate server-authoritative logic
+- Implement proper client validation
+
+## Queue Management
+- Design appropriate queue configurations
+- Implement proper queue prioritization
+- Create appropriate destination selection rules
+- Design proper multi-region queue strategies
+- Implement appropriate placement timeout handling
+- Configure proper queue depth monitoring
+- Design appropriate queue fallback mechanisms
+- Implement proper queue event handling
+
+## Monitoring and Metrics
+- Set up appropriate CloudWatch metrics
+- Create proper operational dashboards
+- Implement proper alerting for critical metrics
+- Design appropriate log analysis
+- Create custom metrics for game-specific events
+- Implement proper performance monitoring
+- Design appropriate capacity utilization tracking
+- Create proper player experience metrics
+
+## Cost Optimization
+- Implement efficient fleet scaling
+- Use spot instances appropriately
+- Design proper instance type selection
+- Create appropriate multi-location strategies
+- Implement proper on-demand vs reserved instance balance
+- Design appropriate resource cleanup processes
+- Create cost allocation tagging
+- Implement proper usage monitoring
+
+## Security
+- Implement proper player authentication
+- Create appropriate IAM roles and policies
+- Design secure API access patterns
+- Implement proper token validation
+- Create secure network configurations
+- Design appropriate encryption for sensitive data
+- Implement proper fleet access controls
+- Create secure deployment pipelines
+
+## Deployment Automation
+- Create proper CI/CD pipelines for server builds
+- Implement proper fleet deployment strategies
+- Design appropriate build version management
+- Create proper rollback mechanisms
+- Implement blue/green deployment patterns
+- Design proper fleet testing strategies
+- Create automated smoke tests for deployments
+- Implement proper deployment metrics monitoring

@@ -1,0 +1,103 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+Description: Best practices for README and project documentation
+Globs: **/README.md, **/docs/**/*.md
+---
+
+# README Documentation Standards
+@base.mdc
+
+## README Structure
+- Begin with a clear, concise project title
+- Include a brief description directly under the title
+- Add badges for build status, version, license, etc. when applicable
+- Structure with clear, hierarchical headings
+- Include a table of contents for longer READMEs
+- Use visual elements (screenshots, diagrams) when they add value
+- End with relevant supplementary sections (license, contributing, etc.)
+- Keep the main README under 1000 lines; link to docs/ for details
+
+## Essential Sections
+- **Introduction** - What the project is and its primary purpose
+- **Features** - Key capabilities, preferably as a bulleted list
+- **Installation** - Step-by-step instructions for getting started
+- **Usage** - Basic examples showing common use cases
+- **Configuration** - Environment variables and settings
+- **API Documentation** - For libraries and services
+- **Deployment** - Instructions for deploying to production
+- **Contributing** - How others can contribute to the project
+- **License** - The project's license information
+
+## Documentation Style
+- Write in a clear, direct style with active voice
+- Use consistent formatting for commands, code, and outputs
+- Highlight important notes and warnings using blockquotes or admonitions
+- Include version-specific information when relevant
+- Maintain a friendly, helpful tone throughout
+- Use proper Markdown formatting for improved readability
+- Include anchors for deep linking to specific sections
+- Keep code examples concise but complete
+
+## Code Examples
+- Include complete, working examples
+- Use syntax highlighting with proper language tags
+- Show both simple and advanced use cases
+- Include expected output when applicable
+- Comment code examples for clarity
+- Ensure examples are up-to-date with current API
+- Use consistent style across all examples
+- Test all examples to ensure they work as documented
+
+## Documentation Organization
+- Keep the main README.md focused on getting started
+- Create a docs/ directory for detailed documentation
+- Organize docs/ by topic or user journey
+- Include an index.md in docs/ to guide navigation
+- Create separate files for different aspects of the project
+- Use a consistent naming convention for documentation files
+- Cross-link between related documentation sections
+- Include a CHANGELOG.md for version history
+
+## Writing for Different Audiences
+- Consider different user types (beginners, experts, etc.)
+- Structure documentation to serve all user levels
+- Place essential "getting started" information prominently
+- Provide deeper technical details in later sections
+- Include architecture details for contributors
+- Create FAQ sections for common questions
+- Include troubleshooting guides for common issues
+- Link to further learning resources when appropriate
+
+## Maintaining Documentation
+- Update docs when features change
+- Review documentation during release process
+- Date and version documentation when appropriate
+- Implement documentation reviews as part of PRs
+- Make documentation updates atomic with code changes
+- Archive outdated documentation rather than deleting
+- Mark deprecated features clearly
+- Maintain a consistent voice even with multiple contributors
+
+## Documentation Tools (if applicable)
+- Consider using documentation generators for API docs
+- Implement Markdown linting for consistency
+- Use diagram-as-code tools (Mermaid, PlantUML) for diagrams
+- Create a style guide for documentation contributors
+- Set up automated checks for broken links
+- Use templates for common documentation patterns
+- Consider using a static site generator for complex documentation
+- Implement search functionality for larger documentation sets
+
+## Project-Specific Documentation
+- Include system architecture diagrams for complex projects
+- Document design decisions and trade-offs
+- Create deployment environment specifications
+- Include performance benchmarks when relevant
+- Document known limitations and future roadmap
+- Include security considerations and best practices
+- Provide migration guides between major versions
+- Document integration points with other systems

@@ -1,0 +1,152 @@
+---
+description: Next.js Application Development Standards
+globs: 
+alwaysApply: false
+---
+---
+Description: Next.js Application Development Standards
+Globs: **/*.tsx, **/*.ts, **/pages/**/*, **/app/**/*, **/components/**/*
+---
+
+# Next.js Development Standards
+@base.mdc
+@typescript.mdc
+
+## Project Structure
+- Use the App Router for new projects
+- Structure pages logically by feature or route
+- Create reusable components in a dedicated components directory
+- Group related functionality in feature directories
+- Use custom hooks for shared logic
+- Implement services for API interactions
+- Keep utility functions in a utils directory
+- Separate UI components from data fetching
+
+## App Router Best Practices
+- Use the folder-based routing system effectively
+- Implement layouts for shared UI across routes
+- Create loading and error states for each route
+- Use route groups for organizational purposes
+- Leverage parallel routes for complex layouts
+- Implement intercepting routes for modals and slideovers
+- Use dynamic segments for parameterized routes
+- Implement proper route handlers for API endpoints
+
+## Component Architecture
+- Use React Server Components by default
+- Mark client components with 'use client' directive when needed
+- Keep components focused on single responsibilities
+- Implement proper prop validation with TypeScript
+- Create reusable UI components in a component library
+- Leverage composition over inheritance
+- Implement proper error boundaries
+- Organize components by domain or feature
+
+## Data Fetching
+- Use React Server Components for server-side data fetching
+- Implement proper caching strategies
+- Leverage SWR or React Query for client-side data fetching
+- Handle loading and error states gracefully
+- Optimize fetch requests with appropriate cache headers
+- Implement pagination for large data sets
+- Use suspense boundaries for loading states
+- Implement proper error handling for failed requests
+
+## Performance Optimization
+- Use Image component for optimized images
+- Implement font optimization with next/font
+- Use dynamic imports for code splitting
+- Implement route prefetching for faster navigation
+- Optimize third-party scripts with Script component
+- Use React.memo for expensive components
+- Implement proper bundling strategies
+- Leverage Edge runtime for performance-critical paths
+
+## State Management
+- Use React Context for shared state when appropriate
+- Implement Redux or Zustand for complex state management
+- Use local state for component-specific state
+- Leverage URL state for sharable state
+- Implement proper state persistence strategies
+- Avoid excessive global state
+- Use React Query for server state management
+- Implement proper loading and error states
+
+## Styling Approaches
+- Use CSS Modules or Tailwind CSS for styling
+- Implement consistent design tokens
+- Create responsive designs with mobile-first approach
+- Use CSS variables for theming
+- Implement dark mode support
+- Create a consistent component design system
+- Leverage CSS-in-JS solutions sparingly
+
+## Authentication & Authorization
+- Implement secure authentication strategies
+- Use NextAuth.js or Clerk for authentication
+- Create proper authorization middleware
+- Protect API routes with authentication checks
+- Implement proper role-based access control
+- Handle authentication errors gracefully
+- Secure cookies and tokens properly
+- Implement proper session management
+
+## API Development
+- Create well-structured API routes
+- Implement proper input validation
+- Use appropriate HTTP status codes
+- Implement consistent error handling
+- Create API documentation
+- Version APIs when necessary
+- Implement rate limiting for public APIs
+- Use appropriate response formats
+
+## SEO Optimization
+- Implement proper metadata for each page
+- Use semantic HTML for better accessibility
+- Create a sitemap.xml and robots.txt
+- Implement proper OpenGraph tags
+- Add structured data where applicable
+- Ensure proper heading hierarchy
+- Optimize for Core Web Vitals
+- Implement proper canonical URLs
+
+## Testing
+- Write unit tests for components and utilities
+- Create integration tests for pages and features
+- Implement end-to-end tests for critical flows
+- Use React Testing Library for component testing
+- Implement Cypress or Playwright for E2E testing
+- Create proper test mocks
+- Test accessibility with appropriate tools
+- Implement visual regression testing
+
+## Deployment & CI/CD
+- Use Vercel or similar platforms for deployment
+- Implement preview deployments for PRs
+- Create proper CI/CD pipelines
+- Run tests before deployment
+- Implement proper environment variable management
+- Use feature flags for controlled releases
+- Create proper rollback procedures
+- Monitor performance after deployment
+
+## Internationalization
+- Use next-intl or similar for translations
+- Implement proper locale detection
+- Create language switcher components
+- Support RTL languages when needed
+- Implement proper date and number formatting
+- Create localized routes
+- Test internationalized content
+- Implement proper fallbacks for missing translations
+
+## Accessibility
+- Follow WCAG guidelines
+- Implement keyboard navigation
+- Use appropriate ARIA attributes
+- Create accessible forms
+- Implement proper focus management
+- Test with screen readers
+- Create high-contrast modes
+- Implement proper error messaging

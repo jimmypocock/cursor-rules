@@ -1,0 +1,103 @@
+---
+description: Best practices for organizing the docs/ directory
+globs: 
+alwaysApply: false
+---
+---
+Description: Best practices for organizing the docs/ directory
+Globs: **/docs/**/*.md, **/documentation/**/*.md
+---
+
+# Documentation Structure Standards
+@base.mdc
+@readme-documentation.mdc
+
+## Documentation Organization
+- Create a clear, logical hierarchy for documentation files
+- Use a consistent naming convention (kebab-case recommended)
+- Group related documents in subdirectories
+- Include an index.md in each directory for navigation
+- Maintain a consistent structure across all documentation
+- Link between related documentation sections
+- Create sidebar navigation for complex documentation
+- Use folders to separate different documentation types
+
+## Core Documentation Types
+- **Guides/** - Step-by-step instructions for common tasks
+- **Concepts/** - Explanations of key ideas and architecture
+- **Reference/** - Detailed technical reference information
+- **Tutorials/** - Complete walkthroughs for beginners
+- **API/** - API documentation if applicable
+- **Examples/** - Example implementations and use cases
+- **Troubleshooting/** - Solutions for common problems
+- **Contributing/** - Guidelines for project contributors
+
+## Documentation Files Structure
+- Begin each file with a descriptive title (# Title)
+- Include a brief introduction explaining the document's purpose
+- Use consistent heading levels (## for main sections, ### for subsections)
+- Include a table of contents for longer documents
+- Add "Next Steps" or "See Also" sections at the end
+- Include metadata (author, date, version) when relevant
+- End with links to related documentation
+- Keep individual files focused on a single topic
+
+## Technical Writing Best Practices
+- Write in a clear, conversational style
+- Use active voice and present tense
+- Explain technical terms on first use
+- Use consistent terminology throughout
+- Create glossaries for complex terminology
+- Include diagrams for complex concepts
+- Break long processes into numbered steps
+- Use tables to organize structured information
+
+## Document Types and Templates
+- **Concept Document** - Explain a single concept thoroughly
+- **How-To Guide** - Task-focused instructions
+- **Tutorial** - Start-to-finish walkthrough with context
+- **Reference** - Comprehensive technical details
+- **Example** - Working code with explanation
+- **FAQ** - Concise answers to common questions
+- **Architecture Document** - System design and rationale
+- **Decision Record** - Document important decisions
+
+## Version-Specific Documentation
+- Clearly mark version-specific information
+- Create version-specific documentation directories when needed
+- Document breaking changes prominently
+- Include migration guides between versions
+- Maintain documentation for supported older versions
+- Use feature flags to toggle content visibility
+- Link to the correct version of external documentation
+- Include version compatibility tables
+
+## Media and Assets
+- Store images in an assets/ directory
+- Use a consistent naming convention for image files
+- Optimize images for web display
+- Include alt text for all images
+- Create and store diagrams as code when possible
+- Maintain source files for complex diagrams
+- Use animated GIFs sparingly for UI demonstrations
+- Include captions for complex figures
+
+## API Documentation
+- Document each endpoint thoroughly
+- Include request and response examples
+- Document all parameters and their types
+- Show error responses and codes
+- Include authentication requirements
+- Document rate limits and pagination
+- Provide example code in multiple languages
+- Create interactive API explorers when possible
+
+## Documentation Testing
+- Validate all code examples work as documented
+- Test documentation links regularly
+- Review documentation for accuracy during releases
+- Implement user feedback mechanisms
+- Gather metrics on documentation usage
+- Test documentation on different devices and screen sizes
+- Use documentation linting tools
+- Review documentation clarity with new team members

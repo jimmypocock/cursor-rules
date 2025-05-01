@@ -1,0 +1,143 @@
+---
+description: React Development Standards
+globs: 
+alwaysApply: false
+---
+---
+Description: React Development Standards
+Globs: **/*.tsx, **/*.jsx, **/*.ts, **/*.js, **/components/**/*, **/hooks/**/*, **/context/**/*
+---
+
+# React Development Standards
+@base.mdc
+@typescript.mdc
+
+## Component Architecture
+- Use functional components with hooks instead of class components
+- Keep components focused on a single responsibility
+- Create small, reusable UI components
+- Implement proper component composition
+- Separate UI components from container components
+- Use proper prop types with TypeScript
+- Structure components with a logical folder organization
+- Create presentational/UI components separate from data containers
+
+## Hooks Usage
+- Follow the Rules of Hooks consistently
+- Use useState for component state management
+- Implement useEffect with proper dependencies
+- Create custom hooks for reusable logic
+- Use useCallback for memoized callbacks
+- Implement useMemo for expensive calculations
+- Apply useRef for persisted mutable values
+- Use context hooks for global state access
+
+## State Management
+- Use local state for component-specific state
+- Implement React Context for shared state
+- Use proper state management libraries for complex state
+- Keep state normalized and minimal
+- Implement proper state initialization
+- Use state update functions instead of direct assignment
+- Create proper state update patterns
+- Implement state persistence when needed
+
+## Performance Optimization
+- Use React.memo for pure components
+- Implement proper key usage in lists
+- Use windowing for long lists (react-window/react-virtualized)
+- Implement proper loading and lazy states
+- Apply code splitting with React.lazy
+- Use Suspense for async operations
+- Implement proper bundle optimization
+- Avoid unnecessary renders with proper dependencies
+
+## Event Handling
+- Use proper event handler naming (handleEventName)
+- Implement event handler functions efficiently
+- Use synthetic events properly
+- Apply proper event propagation control
+- Use debouncing/throttling for frequent events
+- Implement proper form submission handling
+- Create controlled components for form elements
+- Apply proper validation for user inputs
+
+## Side Effects
+- Keep side effects isolated in useEffect
+- Clean up side effects properly
+- Implement proper dependency arrays
+- Use async operations correctly in effects
+- Apply proper error handling for side effects
+- Separate API calls from UI components
+- Create service layers for external interactions
+- Implement proper loading and error states
+
+## Component Communication
+- Use props for parent-to-child communication
+- Implement callback props for child-to-parent communication
+- Use context for deep component communication
+- Apply proper prop drilling avoidance
+- Implement event buses sparingly and carefully
+- Create proper component interfaces
+- Document component communication patterns
+- Use composition over deep prop passing
+
+## Styling Approaches
+- Use consistent styling methodology (CSS Modules, CSS-in-JS, etc.)
+- Implement responsive designs
+- Create theme-aware components
+- Apply proper style organization
+- Use consistent naming conventions for styles
+- Implement proper media queries
+- Apply accessibility-friendly styles
+- Use design tokens for consistency
+
+## Testing
+- Write unit tests for components
+- Create integration tests for component interaction
+- Implement snapshot testing judiciously
+- Test component behavior, not implementation
+- Use proper test selectors
+- Mock external dependencies
+- Test error states and edge cases
+- Implement proper test coverage goals
+
+## Accessibility
+- Use semantic HTML elements
+- Apply proper ARIA attributes
+- Create keyboard-navigable components
+- Implement proper focus management
+- Test with screen readers
+- Use proper color contrast
+- Create accessible forms
+- Implement proper error messaging
+
+## Error Handling
+- Implement error boundaries for component errors
+- Create proper fallback UIs
+- Apply graceful degradation
+- Implement proper API error handling
+- Create user-friendly error messages
+- Log errors appropriately
+- Implement retry mechanisms when appropriate
+- Create proper loading and error states
+
+## Code Organization
+- Organize code by feature or domain
+- Create logical folder structures
+- Use index files for cleaner imports
+- Implement proper barrel exports
+- Apply consistent file naming conventions
+- Create component documentation
+- Use JSDoc comments for component props
+- Implement proper code splitting
+
+## Routing (if applicable)
+- Use React Router or similar for routing
+- Implement proper route organization
+- Create authenticated routes when needed
+- Apply proper route parameters
+- Implement proper navigation guards
+- Create route-level code splitting
+- Apply proper loading states for routes
+- Implement proper 404 handling

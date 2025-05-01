@@ -1,0 +1,41 @@
+{
+  "name": "cursor-rules-tools",
+  "version": "1.0.0",
+  "description": "Tools for validating and managing Cursor IDE rules",
+  "main": "validate-rules.js",
+  "scripts": {
+    "validate": "node validate-rules.js",
+    "check-aws": "node check-aws-best-practices.js",
+    "check-frontend": "node check-frontend-best-practices.js",
+    "check-mobile": "node check-mobile-best-practices.js",
+    "check-all": "npm run check-aws && npm run check-frontend && npm run check-mobile",
+    "test": "jest"
+  },
+  "bin": {
+    "validate-cursor-rules": "./validate-rules.js"
+  },
+  "keywords": [
+    "cursor",
+    "ide",
+    "rules",
+    "validation",
+    "aws",
+    "serverless",
+    "nextjs",
+    "react-native"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "glob": "^10.3.10",
+    "js-yaml": "^4.1.0",
+    "minimist": "^1.2.8"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

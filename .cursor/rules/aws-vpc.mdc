@@ -1,0 +1,143 @@
+---
+description: AWS VPC Network Development Standards
+globs: 
+alwaysApply: false
+---
+---
+Description: AWS VPC Network Development Standards
+Globs: **/vpc/**/*, **/network/**/*, **/infra/**/*, **/cloudformation/**/*.yaml, **/terraform/**/*, **/*.yaml
+---
+
+# AWS VPC Development Standards
+@base.mdc
+@typescript.mdc
+
+## VPC Architecture
+- Design appropriate VPC CIDR blocks for scalability
+- Implement proper subnet segmentation
+- Create appropriate public/private subnet allocation
+- Design proper availability zone distribution
+- Implement efficient routing tables
+- Create appropriate network ACLs
+- Design effective security groups
+- Implement proper VPC endpoints for AWS services
+
+## Subnet Design
+- Implement proper CIDR allocation for subnets
+- Create appropriate subnet tagging
+- Design proper subnet routing
+- Implement appropriate subnet groups
+- Create effective subnet association with route tables
+- Design subnet allocation for different resource types
+- Implement proper IPv6 support when needed
+- Create appropriate subnet documentation
+
+## Security Configuration
+- Implement defense-in-depth security model
+- Create appropriate security group rules
+- Design proper network ACL rules
+- Implement proper ingress/egress filtering
+- Create effective security group referencing
+- Design proper flow logging
+- Implement appropriate VPC endpoint policies
+- Create proper IAM policies for network resources
+
+## Internet Connectivity
+- Implement proper Internet Gateway configuration
+- Create appropriate NAT Gateway deployment
+- Design effective Egress-Only Internet Gateway for IPv6
+- Implement proper elastic IP management
+- Create appropriate public subnet routing
+- Design effective public-facing resources
+- Implement proper elastic load balancer placement
+- Create appropriate route table entries
+
+## VPC Connectivity
+- Implement proper VPC peering when appropriate
+- Create appropriate Transit Gateway configuration
+- Design effective AWS PrivateLink connections
+- Implement proper VPN connectivity
+- Create appropriate Direct Connect integration
+- Design effective hybrid networking
+- Implement proper route propagation
+- Create proper transitive routing solutions
+
+## DNS Configuration
+- Implement proper Route 53 integration
+- Create appropriate private hosted zones
+- Design effective DNS resolution configuration
+- Implement proper DHCP options sets
+- Create appropriate forward and reverse DNS lookups
+- Design effective hybrid DNS solutions
+- Implement proper DNS security
+- Create appropriate domain name management
+
+## VPC Endpoints
+- Implement appropriate interface endpoints
+- Create proper gateway endpoints
+- Design effective endpoint routing
+- Implement appropriate endpoint policies
+- Create proper endpoint security groups
+- Design effective service access patterns
+- Implement proper endpoint monitoring
+- Create appropriate endpoint documentation
+
+## Network Monitoring
+- Implement proper VPC Flow Logs
+- Create appropriate CloudWatch metrics
+- Design effective network monitoring dashboards
+- Implement proper network traffic analysis
+- Create appropriate alerting for network issues
+- Design effective network troubleshooting procedures
+- Implement proper packet capture mechanisms
+- Create appropriate network performance baselines
+
+## Network Performance
+- Implement proper Enhanced Networking
+- Create appropriate placement groups
+- Design effective network throughput optimization
+- Implement proper Jumbo Frames when appropriate
+- Create appropriate bandwidth allocation
+- Design effective network quality of service
+- Implement proper connection tracking
+- Create appropriate throughput monitoring
+
+## Load Balancing
+- Implement proper load balancer subnet placement
+- Create appropriate security groups for load balancers
+- Design effective target groups
+- Implement proper health checks
+- Create appropriate SSL/TLS termination
+- Design effective load balancing algorithms
+- Implement proper sticky sessions when needed
+- Create appropriate cross-zone load balancing
+
+## Cost Optimization
+- Implement efficient NAT Gateway placement
+- Create appropriate VPC Endpoint usage
+- Design cost-effective Transit Gateway connections
+- Implement proper bandwidth optimization
+- Create appropriate monitoring for network costs
+- Design effective data transfer paths
+- Implement proper resource tagging for cost allocation
+- Create appropriate network service quotas
+
+## Infrastructure as Code
+- Implement proper VPC definition in CloudFormation/CDK/Terraform
+- Create appropriate modularity for network components
+- Design effective parameter configuration
+- Implement proper network stack organization
+- Create appropriate stack outputs
+- Design effective resource naming
+- Implement proper tagging standards
+- Create appropriate documentation in code
+
+## Network Automation
+- Implement proper CI/CD for network changes
+- Create appropriate testing for network configurations
+- Design effective network change management
+- Implement proper validation for network changes
+- Create appropriate rollback procedures
+- Design effective network documentation automation
+- Implement proper network configuration backups
+- Create appropriate network compliance checking

@@ -1,0 +1,143 @@
+---
+description: AWS Bedrock Development Standards
+globs: 
+alwaysApply: false
+---
+---
+Description: AWS Bedrock Development Standards
+Globs: **/bedrock/**/*, **/ai/**/*, **/llm/**/*, **/agents/**/*
+---
+
+# AWS Bedrock Development Standards
+@base.mdc
+@typescript.mdc
+
+## Foundational Model Integration
+- Select appropriate foundation models for specific use cases
+- Implement proper model version management
+- Use appropriate prompt engineering techniques
+- Create proper model parameter configurations
+- Implement contextual prompting strategies
+- Design proper model fallback mechanisms
+- Apply proper model evaluation metrics
+- Implement cost-efficient model usage patterns
+
+## API Integration
+- Use the Bedrock API client correctly
+- Implement proper authentication and authorization
+- Create appropriate error handling for API calls
+- Design resilient retry strategies
+- Implement proper request throttling
+- Create appropriate request batching
+- Design efficient request/response handling
+- Implement proper logging for model interactions
+
+## Prompt Engineering
+- Design clear, specific prompts for models
+- Implement proper prompt templating systems
+- Create appropriate context windows
+- Design effective few-shot prompting examples
+- Implement proper system prompts
+- Create appropriate task-specific prompt patterns
+- Design prompt validation mechanisms
+- Implement proper prompt versioning
+
+## Response Processing
+- Implement proper response parsing
+- Create appropriate response validation
+- Design proper error handling for model outputs
+- Implement content filtering when needed
+- Create appropriate response transformation
+- Design fallback mechanisms for poor responses
+- Implement appropriate response caching
+- Create proper logging for model responses
+
+## Bedrock Agents
+- Configure appropriate agent actions and APIs
+- Implement proper agent orchestration
+- Create appropriate action group definitions
+- Design proper agent response handling
+- Implement appropriate agent prompts
+- Create secure API schemas for agent integration
+- Design appropriate agent knowledge bases
+- Implement proper agent versioning and deployment
+
+## Bedrock Knowledge Bases
+- Configure appropriate knowledge bases
+- Implement proper data source integration
+- Create appropriate retrieval strategies
+- Design effective vector embedding models
+- Implement proper query processing
+- Create appropriate citation handling
+- Design effective knowledge filtering
+- Implement proper knowledge base updates
+
+## Security and Governance
+- Implement proper IAM roles and policies
+- Create appropriate model access controls
+- Design proper data encryption at rest and in transit
+- Implement input/output filtering for sensitive data
+- Create appropriate content moderation strategies
+- Design proper model usage policies
+- Implement appropriate model monitoring
+- Create proper audit trails for model usage
+
+## Performance Optimization
+- Implement appropriate caching strategies
+- Create efficient prompt designs for lower token usage
+- Design proper batch processing for multiple requests
+- Implement asynchronous processing when appropriate
+- Create appropriate timeout handling
+- Design proper concurrency management
+- Implement efficient context handling
+- Create appropriate memory management
+
+## Cost Management
+- Implement proper token usage monitoring
+- Create appropriate cost allocation tagging
+- Design efficient prompt strategies to minimize tokens
+- Implement proper batch processing for cost efficiency
+- Create appropriate model selection based on cost-performance
+- Design proper usage quotas and limits
+- Implement cost-based routing between models
+- Create proper cost forecasting and budgeting
+
+## Deployment Strategies
+- Implement proper CI/CD for Bedrock applications
+- Create appropriate environment separation
+- Design proper testing strategies for models
+- Implement proper version control for prompts
+- Create appropriate deployment validation
+- Design proper rollback mechanisms
+- Implement proper blue/green deployment
+- Create appropriate automated testing
+
+## Monitoring and Observability
+- Set up proper CloudWatch metrics
+- Create appropriate custom metrics for model performance
+- Design proper operational dashboards
+- Implement appropriate alerting for model issues
+- Create proper logging for model interactions
+- Design effective trace analysis
+- Implement appropriate user feedback collection
+- Create proper model evaluation metrics
+
+## Responsible AI Implementation
+- Implement appropriate bias detection and mitigation
+- Create proper content filtering mechanisms
+- Design appropriate user consent and transparency
+- Implement proper data privacy controls
+- Create appropriate use case validation
+- Design proper model governance processes
+- Implement appropriate model evaluations
+- Create proper documentation for model usage
+
+## Integration Patterns
+- Design proper integration with other AWS services
+- Implement effective serverless architectures
+- Create appropriate streaming response handling
+- Design effective event-driven architectures
+- Implement proper state management
+- Create appropriate API Gateway integrations
+- Design effective Lambda function patterns
+- Implement proper data transformation pipelines

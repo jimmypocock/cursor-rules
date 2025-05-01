@@ -1,0 +1,114 @@
+---
+description: AWS Lambda Function Best Practices
+globs: 
+alwaysApply: false
+---
+---
+Description: AWS Lambda Function Best Practices
+Globs: **/lambda/**/*.ts, **/functions/**/*.ts, **/src/**/*.ts, **/lambda/**/*.py, **/functions/**/*.py, **/src/**/*.py
+---
+
+# AWS Lambda Development Standards
+@base.mdc
+@typescript.mdc
+
+## Lambda Function Design
+- Follow single responsibility principle for each Lambda function
+- Keep functions focused on one specific task or domain operation
+- Separate business logic from infrastructure concerns
+- Create pure functions where possible for easier testing
+- Implement idempotent functions to handle retries safely
+- Design functions to be stateless
+- Avoid long-running processes; break them into smaller steps
+
+## Handler Structure
+- Keep handlers thin, delegating to service or business logic layers
+- Validate input parameters early in the function
+- Return properly structured responses
+- Add custom context to errors for better debugging
+- Follow these layers in Lambda implementation:
+  1. Handler layer (entry point)
+  2. Service layer (business logic)
+  3. Data access layer (repository pattern)
+  4. External service integrations
+
+## Performance Optimization
+- Initialize SDK clients and database connections outside the handler
+- Cache static assets and reference data between invocations
+- Implement connection pooling for database access
+- Utilize provisioned concurrency for latency-sensitive functions
+- Set appropriate memory allocation based on function needs
+- Use environment variables for configuration
+- Implement backoff strategies for external service calls
+- Leverage AWS SDK client reuse whenever possible
+
+## Cold Start Mitigation
+- Keep function code and dependencies lightweight
+- Use AWS Lambda Layers for large dependencies
+- Use provisioned concurrency for critical paths
+- Implement warmup mechanisms for important functions
+- Consider using NodeJS or native runtime for faster cold starts
+- Choose appropriate memory settings to balance CPU/memory needs
+- Set reasonable function timeouts
+
+## Error Handling
+- Implement comprehensive error handling and logging
+- Add context information to errors
+- Use structured logging with correlation IDs
+- Distinguish between client errors (4xx) and server errors (5xx)
+- Use try/catch blocks with specific error types
+- Handle retries with exponential backoff
+- Consider implementing circuit breakers for external services
+
+## Security Best Practices
+- Apply least privilege principle to Lambda IAM roles
+- Never store secrets in environment variables - use Parameter Store or Secrets Manager
+- Implement input validation for all parameters
+- Set environment variables for configuration
+- Use Enhanced VPC Flow Logs with Lambda in VPC
+- Enable Lambda Insights for monitoring
+- Use AWS X-Ray for tracing
+- Implement rate limiting for public-facing functions
+
+## Cost Optimization
+- Optimize memory allocation for the workload
+- Implement aggressive timeouts
+- Use async patterns for non-critical operations
+- Batch operations where possible
+- Minimize dependency size to reduce execution time
+- Consider using provisioned concurrency vs. on-demand based on traffic patterns
+- Optimize code and dependencies to reduce execution time
+- Use Step Functions for complex workflows instead of long-running Lambdas
+
+## Observability
+- Implement structured logging with consistent formats
+- Add correlation IDs across service invocations
+- Use CloudWatch metrics for monitoring key performance indicators
+- Set up alerts for errors, throttling, and timeout events
+- Enable X-Ray tracing for complex operations
+- Log important business events and metrics
+- Create custom metrics for business-specific monitoring
+
+## Environment-Specific Configuration
+- Use environment variables for configuration
+- Implement feature flags for controlled releases
+- Use Parameter Store for more complex configuration
+- Implement different logging levels based on environment
+
+## Testing Guidelines
+- Write unit tests for business logic
+- Create integration tests for service interactions
+- Implement local testing with aws-sam-local or localstack
+- Use mocks for AWS services in unit tests
+- Test error handling and edge cases
+- Validate retry and backoff strategies
+- Create test fixtures for common test data
+
+## Deployment Practices
+- Use Infrastructure as Code (CloudFormation, SAM, CDK)
+- Implement CI/CD pipelines for automated deployment
+- Use function versions and aliases for controlled deployments
+- Implement progressive deployment strategies (canary, blue/green)
+- Automate rollback procedures
+- Create separate stacks for different environments
+- Consider using SAM for simplified Lambda deployment
