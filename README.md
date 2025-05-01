@@ -7,7 +7,7 @@ A comprehensive set of rules and best practices for the Cursor IDE to guide AI-a
 Add these rules to your existing project with a single command:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/cursor-rules/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/jimmypocock/cursor-rules/main/install.sh | bash
 ```
 
 This will download and install only the necessary rule files into your project's `.cursor/rules` directory.
@@ -107,7 +107,7 @@ The rules follow the modern MDC (Markdown Configuration) format introduced in Cu
 The easiest way to add these rules to your project is using our installation script:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/cursor-rules/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/jimmypocock/cursor-rules/main/install.sh | bash
 ```
 
 This script will:
@@ -123,7 +123,7 @@ If you prefer a manual approach:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/cursor-rules.git
+   git clone https://github.com/jimmypocock/cursor-rules.git
    ```
 
 2. Copy the rules directory to your project:

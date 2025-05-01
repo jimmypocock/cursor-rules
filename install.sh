@@ -18,7 +18,7 @@ if ! command -v git &> /dev/null; then
 fi
 
 # Default repository URL
-REPO_URL="https://github.com/yourusername/cursor-rules.git"
+REPO_URL="https://github.com/jimmypocock/cursor-rules.git"
 
 # Parse command line arguments
 CUSTOM_REPO=false
